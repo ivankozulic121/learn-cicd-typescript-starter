@@ -49,4 +49,4 @@ jobs:
 
 
       - name: Build and push Docker image
-        run: gcloud builds submit --gcs-source-staging-dir=gs://notely-480100-cb-staging/source --tag us-central1-docker.pkg.dev/notely-480100/notely-ar-repo/notely:latest .
+        run: gcloud builds submit --gcs-source-staging-dir=gs://notely-480100-cb-staging/source --tag us-central1-docker.pkg.dev/notely-480100/notely-ar-repo/notely:latest --async .
