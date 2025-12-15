@@ -41,5 +41,12 @@ jobs:
           gcloud config get-value account
           gcloud config list
 
+      - name: Test Cloud Build bucket write
+        run: |
+          echo "test" > /tmp/cb.txt
+          gcloud storage cp /tmp/cb.txt gs://notely-480100_cloudbuild/_gha_test/cb.txt
+          gcloud storage ls gs://notely-480100_cloudbuild/_gha_test/
+
+
       - name: Build and push Docker image
         run: gcloud builds submit --tag us-central1-docker.pkg.dev/notely-480100/notely-ar-repo/notely:latest .
